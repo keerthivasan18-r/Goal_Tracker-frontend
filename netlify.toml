@@ -1,0 +1,7 @@
+[build]
+  # Since Netlify is connected directly to the client repository,
+  # the build command runs directly in the client folder.
+  command = "npm run build && echo \"/api/* $BACKEND_URL/api/:splat 200!\" > dist/_redirects && echo \"/reports/* $BACKEND_URL/reports/:splat 200!\" >> dist/_redirects && echo \"/* /index.html 200\" >> dist/_redirects"
+
+  # The directory to publish (where Vite builds the files)
+  publish = "dist"
