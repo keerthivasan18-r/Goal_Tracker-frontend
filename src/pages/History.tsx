@@ -104,7 +104,7 @@ export const History: React.FC = () => {
     try {
       const res = await api.get(`/reports/${type}`);
       const pdfPath = res.data.pdfUrl;
-      const fullUrl = `http://localhost:5000${pdfPath}`;
+      const fullUrl = `${window.location.origin}${pdfPath}`;
       setReportUrl(fullUrl);
       window.open(fullUrl, '_blank');
     } catch (error: any) {
